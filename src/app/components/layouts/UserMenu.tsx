@@ -19,7 +19,7 @@ const UserMenu = (props: Props) => {
       <DropdownMenu.Content
         sideOffset={10}
         align="end"
-        className="w-60 bg-white shadow-lg ring-1 ring-gray-100 rounded-lg"
+        className="w-60 bg-white shadow-lg ring-1 ring-gray-100 rounded-lg z-50"
       >
         <Item label="Sign up" className="font-medium" />
         <Item label="Login" />

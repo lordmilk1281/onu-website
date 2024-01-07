@@ -41,11 +41,13 @@ function Footer({}: Props) {
   ];
 
   return (
-    <div className="grid grid-cols-1 gap-y-10 bg-gray-100 px-32 py-14 text-gray-600 md:grid-cols-4">
-      {itemData.map((item, index) => (
-        <FooterColumn index={index} data={item} key={index} />
-      ))}
-    </div>
+    <footer className=" bg-gray-100 px-32 py-14">
+      <div className="container mx-auto xl:grid max-w-[1120px] grid-cols-1 gap-y-10 md:grid-cols-4">
+        {itemData.map((item, index) => (
+          <FooterColumn index={index} data={item} key={index} />
+        ))}
+      </div>
+    </footer>
   );
 }
 
