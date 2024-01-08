@@ -7,8 +7,8 @@ type Props = {};
 
 const Navbar = (props: Props) => {
   return (
-    <nav className="border-b bg-white sticky top-0">
-      <div className="container xl:max-w-[1120px] mx-auto hidden h-20 items-center justify-between bg-white sm:flex">
+    <nav className="sticky top-0 border-b border-gray-100 bg-white">
+      <div className="container mx-auto hidden h-20 items-center justify-between bg-white sm:flex xl:max-w-[1120px]">
         <Link href="/     " className="flex items-center gap-x-1 text-cyan-500">
           <LocationIcon />
           <span className="text-xl font-bold ">onu</span>

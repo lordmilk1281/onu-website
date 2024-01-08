@@ -5,12 +5,12 @@ type Props = {};
 
 const UnitPage = (props: Props) => {
   return (
-    <div className="container mx-auto max-w-[1120px] xl:grid space-y-6 py-6 ">
+    <div className="container mx-auto max-w-[1120px] space-y-6 py-6 xl:grid ">
       <h1 className="text-2xl font-semibold">
         Aura House 2bds Eco Bamboo House, Pool, River View
       </h1>
 
-      <section className="grid grid-cols-2 gap-2 overflow-hidden rounded-xl">
+      <section className="relative grid grid-cols-2 gap-2 overflow-hidden rounded-xl">
         <div className="relative aspect-square w-full">
           <Image
             src="/gallery/main.webp"
@@ -31,6 +31,9 @@ const UnitPage = (props: Props) => {
             </div>
           ))}
         </div>
+        <button className="absolute bottom-4 right-4 rounded-md border border-black bg-white px-3 py-1.5 font-medium">
+          Show all photos
+        </button>
       </section>
     </div>
   );
