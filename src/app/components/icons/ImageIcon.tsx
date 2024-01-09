@@ -1,5 +1,5 @@
 import { SVGProps } from "react"
-const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
+const ImageIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={24}
@@ -17,4 +17,4 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
     <path d="m21 15-5-5L5 21" />
   </svg>
 )
-export default SvgComponent
+export default ImageIcon

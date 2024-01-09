@@ -1,30 +1,56 @@
-import React from "react";
-import HouseIcon from "../icons/HouseIcon";
-import BuildingIcon from "../icons/BuildingIcon";
+"use client";
+
+import { useState } from "react";
 import AnchorIcon from "../icons/AnchorIcon";
+import BuildingIcon from "../icons/BuildingIcon";
+import HouseIcon from "../icons/HouseIcon";
+import Container from "../layouts/Container";
 
 type Props = {};
 
 const FilterTypes = (props: Props) => {
+  const [selectedFilter, setSelectedFilter] = useState("apartment");
   return (
-    <section className="sticky top-[81px] bg-white border-b border-gray-100">
-      <div className="container mx-auto flex gap-10 xl:max-w-[1120px]">
+    <section className="sticky top-[81px] border-b border-gray-100 bg-white">
+      <Container className="flex gap-5">
         {unitTypes.map((unit) => (
-          <div
+          <FilterItem
             key={unit.id}
-            className="group relative flex cursor-pointer flex-col items-center gap-1 py-4"
-          >
-            <span>{unit.icon}</span>
-            <span className="text-sm">{unit.name}</span>
-            <span className="absolute inset-x-0 bottom-0 h-0.5 w-full group-hover:bg-gray-900 " />
-          </div>
+            {...unit}
+            isSelected={selectedFilter === unit.id}
+            onClick={() => setSelectedFilter(unit.id)}
+          />
         ))}
-      </div>
+      </Container>
     </section>
   );
 };
 
 export default FilterTypes;
+
+type FilterItemProps = {
+  onClick: () => void;
+  icon: React.ReactNode;
+  name: string;
+  isSelected: boolean;
+};
+
+const FilterItem = ({ onClick, icon, name, isSelected }: FilterItemProps) => {
+  return (
+    <li
+      onClick={onClick}
+      className="group relative flex cursor-pointer flex-col items-center gap-1 py-2"
+    >``
+      <span>{icon}</span>
+      <span className="text-sm">{name}</span>
+      <span
+        className={`absolute inset-x-0 -bottom-[1px] h-0.5 w-full ${
+          isSelected ? "bg-gray-900" : "group-hover:bg-gray-300"
+        }`}
+      />
+    </li>
+  );
+};
 
 const unitTypes = [
   { id: "apartment", name: "Apartment", icon: <HouseIcon /> },
