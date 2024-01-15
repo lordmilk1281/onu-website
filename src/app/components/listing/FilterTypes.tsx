@@ -40,7 +40,7 @@ const FilterItem = ({ onClick, icon, name, isSelected }: FilterItemProps) => {
     <li
       onClick={onClick}
       className="group relative flex cursor-pointer flex-col items-center gap-1 py-2"
-    >``
+    >
       <span>{icon}</span>
       <span className="text-sm">{name}</span>
       <span
