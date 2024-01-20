@@ -11,7 +11,7 @@ type Props = {};
 const FilterTypes = (props: Props) => {
   const [selectedFilter, setSelectedFilter] = useState("apartment");
   return (
-    <section className="sticky top-[81px] border-b border-gray-100 bg-white">
+    <section className="sticky top-[81px] border-b border-zinc-100 bg-white">
       <Container className="flex gap-5">
         {unitTypes.map((unit) => (
           <FilterItem
@@ -45,7 +45,7 @@ const FilterItem = ({ onClick, icon, name, isSelected }: FilterItemProps) => {
       <span className="text-sm">{name}</span>
       <span
         className={`absolute inset-x-0 -bottom-[1px] h-0.5 w-full ${
-          isSelected ? "bg-gray-900" : "group-hover:bg-gray-300"
+          isSelected ? "bg-zinc-900" : "group-hover:bg-zinc-300"
         }`}
       />
     </li>

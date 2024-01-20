@@ -11,11 +11,11 @@ const UnitCard = (props: Props) => {
         <Image alt="card" src="/sample-guest.jpg" fill className="object-cover rounded-xl -z-10" />
       </div>
       <div>
-        <div className="font-semibold text-gray-900 truncate text-base">
+        <div className="font-semibold text-zinc-900 truncate text-base">
           Cupidatat Lorem excepteur
         </div>
-        <div className="text-gray-500 text-sm">4,837 kilometers away</div>
-        <div className="text-gray-500 text-sm">Mar 9 -14</div>
+        <div className="text-zinc-500 text-sm">4,837 kilometers away</div>
+        <div className="text-zinc-500 text-sm">Mar 9 -14</div>
       </div>
     </Link>
   );

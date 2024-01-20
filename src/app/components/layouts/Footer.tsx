@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
+import Container from "./Container";
 
 type Props = {};
 
@@ -41,12 +42,12 @@ function Footer({}: Props) {
   ];
 
   return (
-    <footer className=" bg-gray-100 px-32 py-14">
-      <div className="container mx-auto xl:grid max-w-[1120px] grid-cols-1 gap-y-10 md:grid-cols-4">
+    <footer className=" bg-zinc-100 sm:px-32 py-14">
+      <Container className="grid gap-y-10 md:grid-cols-4">
         {itemData.map((item, index) => (
           <FooterColumn index={index} data={item} key={index} />
         ))}
-      </div>
+      </Container>
     </footer>
   );
 }
@@ -62,7 +63,7 @@ type FooterColumnProps = {
 
 function FooterColumn({ index, data }: FooterColumnProps) {
   return (
-    <div className="space-y-4 text-sm text-gray-800">
+    <div className="space-y-4 text-sm text-zinc-800">
       {data.map((item, index) => (
         <Fragment key={index}>
           {index === 0 ? <h5 className="font-bold">{item}</h5> : <p>{item}</p>}

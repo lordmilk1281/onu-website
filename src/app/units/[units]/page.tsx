@@ -13,7 +13,7 @@ const UnitPage = (props: Props) => {
         Aura House 2bds Eco Bamboo House, Pool, River View
       </h1>
 
-      <section className="relative grid grid-cols-2 gap-2 overflow-hidden rounded-xl">
+      <section className="relative grid sm:grid-cols-2 gap-2 overflow-hidden rounded-xl">
         <div className="relative aspect-square w-full">
           <Image
             src="/gallery/main.webp"
@@ -22,7 +22,7 @@ const UnitPage = (props: Props) => {
             fill
           />
         </div>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="hidden grid-cols-2 gap-2 sm:grid">
           {[0, 1, 2, 3].map((sub) => (
             <div key={sub} className="relative aspect-square w-full">
               <Image
@@ -34,15 +34,15 @@ const UnitPage = (props: Props) => {
             </div>
           ))}
         </div>
-        <button className="absolute bottom-4 right-4 flex items-center gap-1 rounded-md border border-black bg-white px-3 py-1.5 text-sm font-medium">
+        <button className="absolute bottom-4 right-4 hidden items-center gap-1 rounded-md border border-black bg-white px-3 py-1.5 text-sm font-medium sm:flex">
           <ImageIcon />
           Show all photos
         </button>
       </section>
 
-      <div className="flex gap-16">
-        <section className="w-full divide-y divide-gray-200 border-b border-gray-200">
-          <div className="pb-6 text-gray-900">
+      <div className="flex flex-col gap-16 sm:flex-row">
+        <section className="w-full divide-y divide-zinc-200 border-b border-zinc-200">
+          <div className="pb-6 text-zinc-900">
             <h3 className="text-2xl font-medium">
               Private room in resort in Olhuveli, Maldives
             </h3>
@@ -69,7 +69,7 @@ const UnitPage = (props: Props) => {
 
           <div className="space-y-4 py-6">
             <h3 className="text-xl font-medium">Where you'll sleep</h3>
-            <div className="relative aspect-video w-60">
+            <div className="relative aspect-video w-full sm:w-60">
               <Image
                 src="/gallery/bed.jpg"
                 alt="bed"
@@ -78,8 +78,8 @@ const UnitPage = (props: Props) => {
               />
             </div>
             <div>
-              <p className="font-medium text-gray-700">Bedroom</p>
-              <p className="text-sm text-gray-500">
+              <p className="font-medium text-zinc-700">Bedroom</p>
+              <p className="text-sm text-zinc-500">
                 1 double bed, 1 single bed
               </p>
             </div>
@@ -90,29 +90,29 @@ const UnitPage = (props: Props) => {
             <div className="space-y-3">
               <AmenityItem
                 title="Ocean View"
-                icon={<HouseIcon className="w-6 text-gray-700" />}
+                icon={<HouseIcon className="w-6 text-zinc-700" />}
               />
               <AmenityItem
                 title="Sea View"
-                icon={<HouseIcon className="w-6 text-gray-700" />}
+                icon={<HouseIcon className="w-6 text-zinc-700" />}
               />
               <AmenityItem
                 title="Wifi"
-                icon={<HouseIcon className="w-6 text-gray-700" />}
+                icon={<HouseIcon className="w-6 text-zinc-700" />}
               />
               <AmenityItem
                 title="Dedicated workspace"
-                icon={<HouseIcon className="w-6 text-gray-700" />}
+                icon={<HouseIcon className="w-6 text-zinc-700" />}
               />
             </div>
-            <button className="rounded-lg border border-gray-900 font-medium px-6 py-2 text-sm">
+            <button className="rounded-lg border border-zinc-900 px-6 py-2 text-sm font-medium">
               Show All 45 Amenities
             </button>
           </div>
         </section>
 
-        <section className="sticky top-24 h-min w-1/2 space-y-4 rounded-lg bg-white p-4 shadow-lg ring-1 ring-gray-300">
-          <p className="text-xl text-gray-900">
+        <section className="sticky top-24 h-min space-y-4 rounded-lg bg-white p-4 shadow-lg ring-1 ring-zinc-300 sm:w-1/2">
+          <p className="text-xl text-zinc-900">
             $800 <span className="text-sm">night</span>
           </p>
 
@@ -120,10 +120,10 @@ const UnitPage = (props: Props) => {
             Reserve
           </button>
 
-          <p className="text-center text-sm text-gray-500">
+          <p className="text-center text-sm text-zinc-500">
             You won't be charged yet
           </p>
-          <div className="flex items-center justify-between border-t border-gray-200 pt-4 font-semibold text-gray-900">
+          <div className="flex items-center justify-between border-t border-zinc-200 pt-4 font-semibold text-zinc-900">
             <span className="">Total before taxes</span>
             <span>$9,879</span>
           </div>
@@ -146,8 +146,8 @@ const FeatureItem = ({ title, description, icon }: FeatureProps) => {
     <div className="flex items-center gap-8">
       {icon}
       <div>
-        <p className="font-medium text-gray-700">{title}</p>
-        <p className="text-gray-500">{description}</p>
+        <p className="font-medium text-zinc-700">{title}</p>
+        <p className="text-zinc-500">{description}</p>
       </div>
     </div>
   );
@@ -162,7 +162,7 @@ const AmenityItem = ({ title, icon }: AmenityProps) => {
   return (
     <div className="flex items-center gap-3">
       {icon}
-      <p className="text-gray-700">{title}</p>
+      <p className="text-zinc-700">{title}</p>
     </div>
   );
 };
