@@ -1,6 +1,7 @@
 import HouseIcon from "@/app/components/icons/HouseIcon";
 import ImageIcon from "@/app/components/icons/ImageIcon";
 import Container from "@/app/components/layouts/Container";
+import BookingUnitCard from "@/app/components/unit/BookingUnitCard";
 import Image from "next/image";
 import React from "react";
 
@@ -8,7 +9,7 @@ type Props = {};
 
 const UnitPage = (props: Props) => {
   return (
-    <Container className="space-y-6 py-6 xl:grid ">
+    <Container className="space-y-6 py-12 xl:grid">
       <h1 className="text-3xl font-medium">
         Aura House 2bds Eco Bamboo House, Pool, River View
       </h1>
@@ -68,7 +69,7 @@ const UnitPage = (props: Props) => {
           </div>
 
           <div className="space-y-4 py-6">
-            <h3 className="text-xl font-medium">Where you'll sleep</h3>
+            <h3 className="text-xl font-medium">Where you&apos;ll sleep</h3>
             <div className="relative aspect-video w-full sm:w-60">
               <Image
                 src="/gallery/bed.jpg"
@@ -111,23 +112,7 @@ const UnitPage = (props: Props) => {
           </div>
         </section>
 
-        <section className="sticky top-24 h-min space-y-4 rounded-lg bg-white p-4 shadow-lg ring-1 ring-zinc-300 sm:w-1/2">
-          <p className="text-xl text-zinc-900">
-            $800 <span className="text-sm">night</span>
-          </p>
-
-          <button className="text-md w-full rounded-lg bg-cyan-500 py-3 font-medium text-white">
-            Reserve
-          </button>
-
-          <p className="text-center text-sm text-zinc-500">
-            You won't be charged yet
-          </p>
-          <div className="flex items-center justify-between border-t border-zinc-200 pt-4 font-semibold text-zinc-900">
-            <span className="">Total before taxes</span>
-            <span>$9,879</span>
-          </div>
-        </section>
+        <BookingUnitCard />
       </div>
     </Container>
   );

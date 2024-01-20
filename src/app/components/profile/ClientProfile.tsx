@@ -12,7 +12,7 @@ const ClientProfile = (props: Props) => {
   const [edit, setEdit] = useState("");
 
   return (
-    <Container className="space-y-6 py-6">
+    <Container className="space-y-6 py-12">
       <h1 className="text-2xl font-bold text-zinc-900">Personal Info</h1>
       <div className="divide-y divide-zinc-300 max-w-2xl">
         <LegalName isEditing={edit === "name"} onEdit={setEdit} />
