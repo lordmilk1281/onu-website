@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
+import PrimaryButton from "../buttons/PrimaryButton";
 
 type Props = {};
 
@@ -12,12 +13,10 @@ const BookingUnitCard = (props: Props) => {
         $800 <span className="text-sm">night</span>
       </p>
       <Link href="/units/unit/reserve">
-        <button className="text-md w-full rounded-lg bg-cyan-600 py-3 font-medium text-white mt-8 mb-4">
-          Reserve
-        </button>
+        <PrimaryButton label="Reserve" className="mb-4 mt-8 w-full" />
       </Link>
 
-      <p className="text-center text-sm text-zinc-500 mb-4">
+      <p className="mb-4 text-center text-sm text-zinc-500">
         You won&apos;t be charged yet
       </p>
       <div className="flex items-center justify-between border-t border-zinc-200 pt-4 font-semibold text-zinc-900">
