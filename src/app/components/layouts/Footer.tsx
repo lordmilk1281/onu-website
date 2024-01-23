@@ -7,42 +7,17 @@ type Props = {};
 
 function Footer({}: Props) {
   const itemData = [
-    [
-      "ABOUT",
-      "Newsroom",
-      "Learn about new features",
-      "Letter from our founders",
-      "Careers",
-      "Investors",
-    ],
+    ["ABOUT", "Newsroom", "Learn about new features"],
     [
       "Support",
-      "Help Center",
-      "AirCover",
       "Cancellation options",
       "Safety information",
       "Report a neighborhood concern",
     ],
-    [
-      "Community",
-      "Newsroom",
-      "Learn about new features",
-      "Letter from our founders",
-      "Careers",
-      "Investors",
-    ],
-    [
-      "Hosting",
-      "Try hosting",
-      "AirCover for Hosts",
-      "Explore hosting resources",
-      "Safety information",
-      "How to host responsibly",
-    ],
   ];
 
   return (
-    <footer className=" bg-zinc-100 sm:px-32 py-14">
+    <footer className=" bg-zinc-100 py-14 sm:px-32">
       <Container className="grid gap-y-10 md:grid-cols-4">
         {itemData.map((item, index) => (
           <FooterColumn index={index} data={item} key={index} />

@@ -5,15 +5,17 @@ import TextButton from "@/app/components/buttons/TextButton";
 import DialogModal from "@/app/components/globals/DialogModal";
 import ChevronLeftIcon from "@/app/components/icons/ChevronLeftIcon";
 import Container from "@/app/components/layouts/Container";
+import ReservationCalendar from "@/app/components/unit/ReservationCalendar";
 import GuestCount from "@/app/components/unit/GuestCount";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 type Props = {};
 
-const ReversePage = (props: Props) => {
+const ReservationConfirmationPage = (props: Props) => {
   const router = useRouter();
   const [openGuests, setOpenGuests] = useState(false);
+  const [openReservationDates, setOpenReservationDates] = useState(false);
   return (
     <>
       <Container className="my-12 space-y-6">
@@ -34,7 +36,11 @@ const ReversePage = (props: Props) => {
                 <span className="font-medium">Dates</span>
                 <span className="text-gray-500">Feb 26 - Mar 2</span>
               </div>
-              <TextButton label="Edit" className="static text-base" />
+              <TextButton
+                label="Edit"
+                className="static text-base"
+                onClick={() => setOpenReservationDates(true)}
+              />
             </div>
             <div className="flex items-start justify-between gap-4">
               <div className="flex flex-col">
@@ -89,8 +95,15 @@ const ReversePage = (props: Props) => {
       <DialogModal open={openGuests} onClose={() => setOpenGuests(false)}>
         <GuestCount />
       </DialogModal>
+
+      <DialogModal
+        open={openReservationDates}
+        onClose={() => setOpenReservationDates(false)}
+      >
+        <ReservationCalendar />
+      </DialogModal>
     </>
   );
 };
 
-export default ReversePage;
+export default ReservationConfirmationPage;

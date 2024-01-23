@@ -12,7 +12,7 @@ const FilterTypes = (props: Props) => {
   const [selectedFilter, setSelectedFilter] = useState("apartment");
   return (
     <section className="sticky top-[81px] border-b border-zinc-100 bg-white">
-      <Container className="flex gap-5">
+      <Container className="flex gap-8">
         {unitTypes.map((unit) => (
           <FilterItem
             key={unit.id}
@@ -39,9 +39,11 @@ const FilterItem = ({ onClick, icon, name, isSelected }: FilterItemProps) => {
   return (
     <li
       onClick={onClick}
-      className="group relative flex cursor-pointer flex-col items-center gap-1 py-2"
+      className="group relative flex cursor-pointer flex-col items-center gap-1 py-3"
     >
-      <span>{icon}</span>
+      <span className={isSelected ? "text-black" : "text-zinc-500"}>
+        {icon}
+      </span>
       <span className="text-sm">{name}</span>
       <span
         className={`absolute inset-x-0 -bottom-[1px] h-0.5 w-full ${

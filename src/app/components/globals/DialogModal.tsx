@@ -2,6 +2,7 @@
 
 import * as Dialog from "@radix-ui/react-dialog";
 import { ReactNode } from "react";
+import XIcon from "../icons/XIcon";
 
 type Props = {
   open: boolean;
@@ -26,7 +27,9 @@ const DialogModal = ({ open, onClose, children }: Props) => {
             style={styleAnimation}
             className="fixed left-1/2 top-1/2 z-50 max-h-[85vh] -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-6"
           >
-            <button onClick={onClose}></button>
+            <button onClick={onClose}>
+              <XIcon />
+            </button>
             {children}
           </Dialog.Content>
         </Dialog.Portal>
