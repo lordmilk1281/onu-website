@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import * as Dialog from "@radix-ui/react-dialog";
 import { ReactNode } from "react";
@@ -7,6 +7,7 @@ import XIcon from "../icons/XIcon";
 type Props = {
   open: boolean;
   children: ReactNode;
+  className?: string;
   onClose: () => void;
 };
 
@@ -14,7 +15,7 @@ const styleAnimation = {
   animation: "overlayShow 150s cubic-bezier(0.16, 1, 0.3, 1)",
 };
 
-const DialogModal = ({ open, onClose, children }: Props) => {
+const DialogModal = ({ open, onClose, className, children }: Props) => {
   return (
     <Dialog.Root open={open} onOpenChange={onClose}>
       {open ? (
@@ -25,7 +26,7 @@ const DialogModal = ({ open, onClose, children }: Props) => {
           />
           <Dialog.Content
             style={styleAnimation}
-            className="fixed left-1/2 top-1/2 z-50 max-h-[85vh] -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-6"
+            className={`fixed inset-2 z-50 m-auto max-h-[85vh] w-[90vw] max-w-lg overflow-y-auto rounded-lg bg-white p-6 ${className}`}
           >
             <button onClick={onClose}>
               <XIcon />
