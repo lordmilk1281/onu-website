@@ -11,7 +11,7 @@ type Props = {};
 const FilterTypes = (props: Props) => {
   const [selectedFilter, setSelectedFilter] = useState("apartment");
   return (
-    <section className="sticky top-[81px] border-b border-zinc-100 bg-white">
+    <section className="sticky top-20 border-b border-zinc-100 bg-white z-20">
       <Container className="flex gap-8 justify-between sm:justify-normal">
         {unitTypes.map((unit) => (
           <FilterItem

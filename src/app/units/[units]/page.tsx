@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
 import PrimaryButton from "@/app/components/buttons/PrimaryButton";
 import DialogModal from "@/app/components/globals/DialogModal";
 import HouseIcon from "@/app/components/icons/HouseIcon";
 import ImageIcon from "@/app/components/icons/ImageIcon";
 import Container from "@/app/components/layouts/Container";
+import Gallery from "@/app/components/unit/Gallery";
 import ReservationView from "@/app/components/unit/ReservationView";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -13,6 +14,7 @@ type Props = {};
 
 const UnitPage = (props: Props) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [openGallery, setOpenGallery] = useState(false);
   return (
     <>
       <Container className="space-y-6 py-12 xl:grid">
@@ -41,7 +43,10 @@ const UnitPage = (props: Props) => {
               </div>
             ))}
           </div>
-          <button className="absolute bottom-4 right-4 hidden items-center gap-1 rounded-md border border-black bg-white px-3 py-1.5 text-sm font-medium sm:flex">
+          <button
+            onClick={() => setOpenGallery(true)}
+            className="absolute bottom-4 right-4 flex items-center gap-1 rounded-md border border-black bg-white px-3 py-1.5 text-sm font-medium"
+          >
             <ImageIcon />
             Show all photos
           </button>
@@ -140,8 +145,12 @@ const UnitPage = (props: Props) => {
           </section>
         </div>
       </Container>
-      <DialogModal onClose={() => setDrawerOpen(false)} open={drawerOpen} className="" >
+      <DialogModal onClose={() => setDrawerOpen(false)} open={drawerOpen}>
         <ReservationView />
+      </DialogModal>
+
+      <DialogModal className="p-0 bg-inherit" onClose={() => setOpenGallery(false)} open={openGallery}>
+        <Gallery />
       </DialogModal>
     </>
   );

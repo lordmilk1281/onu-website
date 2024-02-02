@@ -3,6 +3,7 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { ReactNode } from "react";
 import XIcon from "../icons/XIcon";
+import { cn } from "@/utils";
 
 type Props = {
   open: boolean;
@@ -26,9 +27,12 @@ const DialogModal = ({ open, onClose, className, children }: Props) => {
           />
           <Dialog.Content
             style={styleAnimation}
-            className={`fixed inset-2 z-50 m-auto max-h-[85vh] w-[90vw] max-w-lg overflow-y-auto rounded-lg bg-white p-6 ${className}`}
+            className={cn(
+              "fixed inset-2 z-50 m-auto h-full max-h-[85vh] w-[90vw] max-w-lg overflow-y-auto rounded-lg bg-white p-6",
+              className,
+            )}
           >
-            <button onClick={onClose}>
+            <button className="fixed top-4 right-4 text-white" onClick={onClose}>
               <XIcon />
             </button>
             {children}
