@@ -8,14 +8,17 @@ type Props = {};
 
 const Gallery = (props: Props) => {
   return (
-    <Swiper modules={[Navigation]} className="h-full">
+    <Swiper
+      modules={[Navigation]}
+      className="relative aspect-square w-full rounded-xl"
+    >
       {imageArray.map((image, index) => (
         <SwiperSlide key={`index-${index}`}>
           <Image
             src={image}
             alt={`index-${index}`}
             fill
-            className="object-cover"
+            className="-z-10 object-cover"
           />
         </SwiperSlide>
       ))}
