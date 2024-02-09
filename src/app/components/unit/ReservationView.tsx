@@ -60,14 +60,10 @@ const ReservationView = (props: Props) => {
           </div>
         </section>
 
-        {/* Choose how to pay */}
+        {/* Payment Details */}
         <section className="space-y-4 py-5">
-          <h3 className="text-xl font-medium">Choose how to pay</h3>
+          <h3 className="text-xl font-medium">Payment Details</h3>
           <div className="viber divide-y divide-gray-300 rounded-lg border border-gray-300">
-            <div className="z-10 rounded-tl-md rounded-tr-md border-2 border-black p-4">
-              <span className="font-medium">Pay in full</span>
-              <span className="block">Pay the total ($3, 198.90).</span>
-            </div>
             <div className="p-4">
               <span className="font-medium">Pay in full</span>
               <span className="block">Pay the total ($3, 198.90).</span>

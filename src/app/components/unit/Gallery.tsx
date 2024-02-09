@@ -1,7 +1,7 @@
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import Image from "next/image";
 
 type Props = {};
@@ -9,8 +9,9 @@ type Props = {};
 const Gallery = (props: Props) => {
   return (
     <Swiper
-      modules={[Navigation]}
-      className="relative aspect-square w-full rounded-xl"
+      pagination  
+      modules={[Pagination]}
+      className="relative aspect-square w-full rounded-xl hover:brightness-90 transition-all"
     >
       {imageArray.map((image, index) => (
         <SwiperSlide key={`index-${index}`}>

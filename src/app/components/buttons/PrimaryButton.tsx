@@ -10,7 +10,7 @@ const PrimaryButton = ({ className, label, ...props }: Props) => {
     <button
       {...props}
       className={cn(
-        "text-md rounded-lg bg-cyan-600 py-4 px-6 font-medium text-white",
+        "text-md rounded-lg bg-cyan-600 focus:bg-cyan-700 py-4 px-6 font-medium text-white",
         className,
       )}
     >

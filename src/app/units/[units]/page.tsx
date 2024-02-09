@@ -119,7 +119,7 @@ const UnitPage = (props: Props) => {
                   icon={<HouseIcon className="w-6 text-zinc-700" />}
                 />
               </div>
-              <button className="rounded-lg border border-zinc-900 px-6 py-2 text-sm font-medium">
+              <button className="rounded-lg border border-zinc-900 px-6 py-2 text-sm font-medium focus:bg-zinc-100 text-slate-900">
                 Show All 45 Amenities
               </button>
             </div>
